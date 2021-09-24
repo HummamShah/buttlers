@@ -1,4 +1,4 @@
-﻿var app = angular.module('TIMS', ['toaster', 'ngSanitize', 'ui.select', 'chart.js']);
+﻿var app = angular.module('Butler', ['toaster', 'ngSanitize', 'ui.select', 'chart.js']);
 app.constant("moment", moment);
 app.filter('propsFilter', function () {
     return function (items, props) {

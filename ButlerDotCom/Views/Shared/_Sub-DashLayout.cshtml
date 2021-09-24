@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html >
-<html ng-app="TIMS">
+<html ng-app="Butler">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>TIMS</title>
+    <title>Butler</title>
     @*<link href="css/styles.css" rel="stylesheet" />*@
     <link href="~/Content/SubDashboard.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -24,12 +24,12 @@
 <body class="sb-nav-fixed" ng-controller="baseCtrl" ng-class="ServiceClassBinder" ng-cloak>
     <toaster-container toaster-options="{'time-out': 7000}"></toaster-container>
     <div class="loader" ng-if="TotalNumberOfServicesRunning > 0"></div>
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <nav class="sb-topnav nav-margin navbar navbar-expand navbar-dark bg-light">
         @*<a href="" style="padding-right:3%;">
             <img src="~/Content/Images/TIMS-logo.png" alt="" width="110" height="35" class="d-inline-block align-top">
         </a>*@
 
-        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+        <button class="btn-visibility btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             @*<div class="input-group">
@@ -41,10 +41,21 @@
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
+
             @*<li class="nav-item">
-                    <a><i class="fas fa-bell"></i></a>
-                </li>*@
-            @Html.Partial("_LoginPartial")
+            <a><i class="fas fa-bell"></i></a>
+        </li>*@
+            <!--@Html.Partial("_LoginPartial")-->
+            <li>
+                <a href="#"><img class="header-icons" src="https://img.icons8.com/fluency-systems-regular/48/000000/appointment-reminders--v1.png" /></a>
+            </li>
+            <li>
+                <a href="#"><img class="header-icons" src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/50/000000/external-message-contact-flatart-icons-outline-flatarticons.png" /></a>
+            </li>
+            <li>
+                <a href="#"><img class="header-icons" src="https://img.icons8.com/ios/50/000000/exit.png" /></a>
+            </li>
+
         </ul>
     </nav>
     <div id="layoutSidenav">
@@ -52,80 +63,34 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu font-12">
                     <a href="~/Home" style="padding-right:3%;">
-                        <img src="~/Content/Images/ButlerLogo.jpg" />
+                        <img class="dashboard-logo" src="~/Content/Images/ButlerLogo.jpg" />
                     </a>
+                    <div class="user-avatar">
+                        <img class="image-fit user-avatar-image" src="	http://revamp.butlersbench.com/storage/contractor/K9YwB6SAcogbnzDQnwDHvbBOWkPqRkeQMyipYt5t.jpeg"/>
+                    </div>
                     <div class="nav">
+                        <div class="sb-sidenav-menu-heading" style="padding-top:0px;">Interface</div>
                         <a class="nav-link" href="~/Home">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        <div class="sb-sidenav-menu-heading" style="padding-top:0px;">Interface</div>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Jobs Inspections
+                        </a>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false">
-                            Site Database
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            User Management
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/SiteDatabase/SiteLocator">Site Locator</a>
-                                <a class="nav-link" href="/SiteDatabase/AddSite">Add Site</a>
-                                <a class="nav-link" href="/SiteDatabase/TennantList">Tennants</a>
-                                <a class="nav-link" href="/SiteDatabase/AddTennantDetails">Add Tennant Details</a>
+                                <a class="nav-link" href="#">Admin</a>
+                                <a class="nav-link" href="#">Contractor</a>
+                                <a class="nav-link" href="#">Costumer</a>
+                                <a class="nav-link" href="#">Worker</a>
                             </nav>
                         </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            Projects
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    O&M
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="/SiteAccessReq/">Site Access Request</a>
-                                        <a class="nav-link" href="/SiteFuelingReq/">Site Feuling Request</a>
-                                        <a class="nav-link" href="#">Site Corrective Mentainence Request</a>
-                                        <a class="nav-link" href="#">Site Preventive Mentainence Request</a>
-                                    </nav>
-                                </div>
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                    Network Implementations
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="/SiteSurveyReq/">Site Survey Request</a>
-                                        <a class="nav-link" href="/SiteSharingReq/">Site Sharing Request</a>
-                                        <a class="nav-link" href="/SiteInstallationReq/">Site Instalation Request</a>
-                                        <a class="nav-link" href="/SiteDismantleReq/">Site Dismantle Request</a>
-                                    </nav>
-                                </div>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseTickets" aria-expanded="false" aria-controls="pagesCollapseTickets">
-                            Trouble Tickets
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseTickets" aria-labelledby="headingthree">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/Tickets/Index">Ticket List</a>
-                                <a class="nav-link" href="/Tickets/Add">Add Ticket</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseBilling" aria-expanded="false" aria-controls="pagesCollapseBilling">
-                            Finance & Billing
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseBilling" aria-labelledby="headingthree">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="/Invoice/">Invoices</a>
-                                <a class="nav-link" href="/Payment/">Payments</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link" href="/Vendor/Index"> Vendors</a>
-                        <a class="nav-link" href="/SecurityCompany/Index"> Security Company</a>
                     </div>
                 </div>
             </nav>

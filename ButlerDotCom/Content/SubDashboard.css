@@ -61,12 +61,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 12px !important;
+    /* font-size: 12px !important;*/
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
+    background-color: #ebeff2 !important;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -10697,11 +10697,14 @@ body {
 }
 
     .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav {
-        padding-top: 56px;
+        padding-top: 0px;
     }
 
         .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav .sb-sidenav-menu {
             overflow-y: auto;
+            overflow-x:hidden;
+            background: white;
+            padding-top: 10px;
         }
 
 .sb-nav-fixed #layoutSidenav #layoutSidenav_content {
@@ -10780,9 +10783,12 @@ body {
             .sb-sidenav .sb-sidenav-menu .nav .nav-link {
                 display: flex;
                 align-items: center;
-                padding-top: 0.75rem;
-                padding-bottom: 0.75rem;
+                color: #435966;
+                padding: 13px 24px;
                 position: relative;
+                font-size: .925rem;
+                transition: .2s ease-in-out !important;
+                font-weight: 500;
             }
 
                 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
@@ -10815,27 +10821,27 @@ body {
 }
 
     .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
-        color: black;
+        color: #435e6b;
     }
 
     .sb-sidenav-dark .sb-sidenav-menu .nav-link {
         color: black;
     }
 
-        .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+       /* .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
             color: black;
-        }
+        }*/
 
-        .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+       /* .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
             color: rgba(255, 255, 255, 0.25);
-        }
+        }*/
 
         .sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
-            color: #b79c4f;
+            color: #71b6f9 !important;
         }
 
         .sb-sidenav-dark .sb-sidenav-menu .nav-link.active {
-            color: #fff;
+            color: #71b6f9 !important;
         }
 
             .sb-sidenav-dark .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
@@ -11023,4 +11029,71 @@ body {
     font-size: 8px!important;
     padding-top: 4px!important;
     text-decoration: none!important;
+}
+
+.dashboard-logo {
+    width: 100%;
+    height: 65px;
+    max-height: 75px;
+    object-fit: scale-down;
+}
+
+.user-avatar {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #deb887;
+    margin: 13px auto;
+}
+
+.image-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-avatar-image {
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.body-content {
+    padding-top: 14px !important;
+    background: #ebeff2;
+    padding-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px !important;
+}
+
+.AddUserForm {
+    padding: 10px 20px !important;
+    border-radius: 12px;
+    box-shadow: 0px 0px 6px #303535b8;
+}
+
+.nav-margin {
+    margin-left: 225px;
+}
+
+
+@media (max-width: 991px) {
+    .nav-margin {
+        margin-left: 0px ;
+    }
+   
+
+}
+
+@media (min-width: 992px) {
+    .btn-visibility {
+        display: none !important ;
+    }
+}
+
+.header-icons {
+    width: 24px;
+    height: 25px;
+    margin: 0px 11px;
 }
