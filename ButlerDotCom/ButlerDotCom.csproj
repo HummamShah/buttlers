@@ -183,10 +183,16 @@
     <Compile Include="Content\Resources\Constants\EmailInfo.Designer.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Api\CategoryApiController.cs" />
+    <Compile Include="Controllers\Api\JobApiController.cs" />
+    <Compile Include="Controllers\Api\ReferenceApiController.cs" />
+    <Compile Include="Controllers\Api\UserApiController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContractorController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WorkerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -216,6 +222,7 @@
     <Content Include="Content\js\angular-chart.min.js" />
     <Content Include="Content\js\angular.min.js" />
     <Content Include="Content\js\Angular\AngularControllers\BaseCtrl.js" />
+    <Content Include="Content\js\Angular\AngularControllers\CategoryCtrl.js" />
     <Content Include="Content\js\Angular\app.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\moment.min.js" />
@@ -281,6 +288,9 @@
     <Content Include="Views\Shared\_Sub-DashLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Add.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a77b6985f00e437781709ba6cd2fac97" Name="Diagram1">
+        <EntityTypeShape EntityType="ButlerModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ButlerModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ButlerModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ButlerModel.AspNetUsers" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="ButlerModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ButlerModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ButlerModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ButlerModel.Category" Width="1.5" PointX="3" PointY="8.625" />
+        <EntityTypeShape EntityType="ButlerModel.ControlCenter" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="ButlerModel.Customer" Width="1.5" PointX="3" PointY="12.75" />
+        <EntityTypeShape EntityType="ButlerModel.Job" Width="1.5" PointX="5.25" PointY="7.125" />
+        <EntityTypeShape EntityType="ButlerModel.Reference" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ButlerModel.UserProfile" Width="1.5" PointX="5.625" PointY="14" />
+        <EntityTypeShape EntityType="ButlerModel.Worker" Width="1.5" PointX="7.75" PointY="5.75" />
+        <AssociationConnector Association="ButlerModel.FK_UserProfile_User" />
+        <AssociationConnector Association="ButlerModel.FK_Category_ContolCenter" />
+        <AssociationConnector Association="ButlerModel.FK_Job_Category" />
+        <AssociationConnector Association="ButlerModel.FK_Job_ControlCenter" />
+        <AssociationConnector Association="ButlerModel.FK_Job_Customer" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
