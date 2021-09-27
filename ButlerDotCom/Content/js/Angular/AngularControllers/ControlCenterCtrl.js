@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('CategoryCtrl',
+app.controller('ControlCenterCtrl',
     [
         "$scope",
         "$rootScope",
@@ -11,10 +11,10 @@ app.controller('CategoryCtrl',
         "moment",
         function ($scope, $rootScope, $timeout, $q, $window, $http, toaster, moment) {
             $scope.init = function () {
-                
+
             }
             $scope.AddInit = function () {
-                $scope.Category = {};
+                $scope.ControlCenter = {};
                 if ($scope.GetUrlParameter("Id") != null) {
                     var Id = $scope.GetUrlParameter("Id");
                     var data = {
@@ -22,11 +22,11 @@ app.controller('CategoryCtrl',
 
                     }
                     console.log(data);
-                    $scope.AjaxGet("/api/CategoryApi/GetCategory", data).then(
+                    $scope.AjaxGet("/api/ControlCenterApi/GetControlCenter", data).then(
                         function (response) {
                             if (response.status == 200) {
                                 console.log(response)
-                                $scope.Category = response.data;
+                                $scope.ControlCenter = response.data;
                             }
                             else {
                                 toaster.pop('error', "error", "Not  foound")
@@ -34,26 +34,26 @@ app.controller('CategoryCtrl',
                         });
                 }
             }
-            $scope.AddCategory = function (Category) {
-                console.log(Category);
-                $scope.AjaxPost("/api/CategoryApi/AddCategory", Category).then(
+            $scope.AddControlCenter = function (ControlCenter) {
+                console.log(ControlCenter);
+                $scope.AjaxPost("/api/ControlCenterApi/AddControlCenter", ControlCenter).then(
                     function (response) {
                         if (response.status == 200) {
                             toaster.pop('success', "success", "text");
-                            $timeout(function () { window.location.href = '/Category'; }, 2000);
+                            $timeout(function () { window.location.href = '/ControlCenter'; }, 2000);
                         } else {
-                            toaster.pop('error', "error", "Could not add Category");
+                            toaster.pop('error', "error", "Could not add ControlCenter");
                         }
                     });
             }
 
-            $scope.EditSecurityCompany = function (Category) {
-                console.log(Category);
-                $scope.AjaxPost("/api/CategoryApi/EditCategory", Category).then(
+            $scope.EditSecurityCompany = function (ControlCenter) {
+                console.log(ControlCenter);
+                $scope.AjaxPost("/api/ControlCenterApi/EditControlCenter", ControlCenter).then(
                     function (response) {
                         if (response.status == 200) {
                             toaster.pop('success', "success", "Security Company Update Successfully!");
-                            $timeout(function () { window.location.href = '/Category/Index' }, 2000);
+                            $timeout(function () { window.location.href = '/ControlCenter/Index' }, 2000);
                         }
                         else {
                             toaster.pop('error', "error", "Could Not Update Security Company");

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Butler.Model.Request.Category;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,31 +10,29 @@ namespace ButlerDotCom.Controllers.Api
 {
     public class CategoryApiController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        [HttpGet]
+        public object GetListing([FromUri] GetCategoryListRequest req)
         {
-            return new string[] { "value1", "value2" };
+            var result = req.RunRequest(req);
+            return result;
         }
-
-        // GET api/<controller>/5
-        public string Get(int id)
+        [HttpPost]
+        public object AddCategory([FromBody] AddCategoryRequest req)
         {
-            return "value";
+            var result = req.RunRequest(req);
+            return result;
         }
-
-        // POST api/<controller>
-        public void Post([FromBody] string value)
+        [HttpPost]
+        public object EditCategory([FromBody] EditCategoryRequest req)
         {
+            var result = req.RunRequest(req);
+            return result;
         }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
+        [HttpGet]
+        public object GetCategory([FromUri] GetCategoryRequest req)
         {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
+            var result = req.RunRequest(req);
+            return result;
         }
     }
 }

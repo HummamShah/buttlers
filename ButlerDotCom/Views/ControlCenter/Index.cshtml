@@ -3,13 +3,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Sub-DashLayout.cshtml";
 }
-
-
-
-<div ng-controller="CategoryCtrl" ng-init="init()" class="container-fluid body-content">
+<div ng-controller="ControlCenterCtrl" ng-init="init()" class="container-fluid body-content">
     <div class="row ">
         <div class="col-12 d-flex align-items-center justify-content-between">
-            <h2>Admin</h2>
+            <h2>Control Center</h2>
             <a href="/Category/Add" class="btn btn-success">
                 Add <i class="fas fa-plus"></i>
             </a>
@@ -37,12 +34,7 @@
                             <th>CompanyName</th>
                             <th>ContactName</th>
                             <th>ContactTitle</th>
-                            <th>City</th>
-                            <th>PostalCode</th>
-                            <th>Country</th>
-                            <th>Phone</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                 </table>
@@ -58,19 +50,20 @@
     $(document).ready(function () {
         $("#dataTable").DataTable({
             "ajax": {
-                "url": "/api/CategoryApi/GetListing",
+                "url": "/api/ControlCenterApi/GetListing",
                 "type": "GET",
                 "dataSrc": "Data"
             },
             "columns": [
                 { "data": "Id" },
                 { "data": "Name" },
-                { "data": "Description" },
-                { "data": "ControlCenterId" },
+                { "data": "Latitude" },
+                { "data": "Longitude" },
                 {
-                    "render": function (data, type, row) { return '<a class="btn btn-info" href="/Category/Add?Id=' + row["Id"] + '">Edit</a>'; }
+                    "render": function (data, type, row) { return '<a class="btn btn-info" href="/ControlCenter/Add?Id=' + row["Id"] + '">Edit</a>'; }
                 }
             ]
         });
     });
 </script>
+

@@ -8,8 +8,12 @@
     <meta name="author" content="" />
     <title>Butler</title>
     @*<link href="css/styles.css" rel="stylesheet" />*@
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <link href="~/Content/SubDashboard.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     @*<link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
         <link href="~/Content/dataTables.bootstrap4.min.css" rel="stylesheet" />*@
@@ -19,6 +23,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
     <link href="~/Content/UiSelect2/Select.css" rel="stylesheet" />
     <link href="~/Content/toaster.css" rel="stylesheet" />
+
+
 
 </head>
 <body class="sb-nav-fixed" ng-controller="baseCtrl" ng-class="ServiceClassBinder" ng-cloak>
@@ -91,6 +97,30 @@
                                 <a class="nav-link" href="#">Worker</a>
                             </nav>
                         </div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categoryLayout" aria-expanded="false">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Category
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="categoryLayout" aria-labelledby="headingOne">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/Category/">Index</a>
+                                <a class="nav-link" href="/Category/Add">Add</a>
+
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#controlCenterLayout" aria-expanded="false">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Control Center
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="controlCenterLayout" aria-labelledby="headingOne">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/ControlCenter/">Index</a>
+                                <a class="nav-link" href="/ControlCenter/Add">Add</a>
+
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -112,7 +142,7 @@
     <script src="~/Content/js/toaster.js"></script>
     @Scripts.Render("~/Content/js/Angular/AngularBundle")
 
-    @Scripts.Render("~/bundles/jquery")
+
     <script src="~/Content/js/angular-chart.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Content/js/angular-chart.min.js"></script>

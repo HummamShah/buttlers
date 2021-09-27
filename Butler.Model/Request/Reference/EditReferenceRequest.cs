@@ -34,7 +34,7 @@ namespace Butler.Model.Request.Reference
             try
             {
                 var Reference = _dbContext.Reference.Where(x => x.Id == req.Id).FirstOrDefault();
-                Reference.FullName = req.FullName
+                Reference.FullName = req.FullName;
                 Reference.CNIC = req.CNIC;
                 Reference.CNICFrontImageUrl = req.CNICFrontImageUrl;
                 Reference.CNICBackImageUrl = req.CNICBackImageUrl;

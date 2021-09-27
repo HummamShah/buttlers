@@ -28,21 +28,15 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <lable>Control Center</lable>
-                    <input class="form-control" type="password" placeholder="Enter Password">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <lable>Contact</lable>
-                    <input class="form-control" type="number" placeholder="Enter Contact">
+                    <input class="form-control" type="number" ng-model="Category.ControlCenterId" placeholder="Enter Control Center">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12 ">
-                <div class="btn btn-primary float-right">
+                <a ng-click="AddCategory(Category)" class="btn btn-primary float-right">
                     Submit
-                </div>
+                </a>
             </div>
         </div>
     </div>
